@@ -1,4 +1,4 @@
-# Memorize is a game about memorizing colors ~ Memorize es un juego sobre memorizar colores.
+# Memorize es un juego sobre memorizar colores.
 
 ![alt text](https://i.ibb.co/938CPM3/memorize.png)
 

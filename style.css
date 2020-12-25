@@ -1,0 +1,97 @@
+body {
+    align-items: center;
+    background-color: #141d26;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;    
+}
+
+.score {
+    color: whitesmoke;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px
+}  
+.gameboard {
+    position: relative;
+    border-radius: 50%;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 300px;
+}
+.color {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+}
+.left {
+    float: left;
+}
+.right {
+    float: left;
+}
+.celeste {
+    background: #22a6b3;
+}
+.celeste.light {
+    background: #7ed6df;
+}
+.violeta {
+    background: #be2edd;
+}
+.violeta.light {
+    background: #e056fd;
+}
+.naranja {
+    background: #f0932b;
+}
+.naranja.light {
+    background: #ffbe76;
+}
+.verde {
+    background: #6ab04c;
+}
+.verde.light {
+    background: #badc58;
+}
+.btn-start {
+    background: #ecf0f1;
+    border: none;
+    border-radius: 10px;
+    color: #141d26;
+    cursor: pointer;
+    font-size: 2.2rem;
+    font-weight: bold;
+    height: 60px;
+    left: calc(50% - 90px);
+    position: absolute;
+    top: calc(50% - 30px);
+    outline: none;
+    width: 180px;
+}
+.hide {
+    display: none;
+}
+
+@media (min-width: 420px) {
+    .gameboard {
+        height: 400px;
+        width: 400px;
+    }
+}
+@media (min-width: 520px) {
+    .gameboard {
+        height: 500px;
+        width: 500px;
+    }
+}
+@media (min-width: 620px) {
+    .gameboard {
+        height: 600px;
+        width: 600px;
+    }
+}

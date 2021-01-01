@@ -1,97 +1,88 @@
+* {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+ 
 body {
     align-items: center;
     background-color: #141d26;
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
-    height: 100vh;
     justify-content: center;
-    margin: 0;    
+    height: 100vh;
+    width: 100%;
 }
 
-.score {
+.score-container {
     color: whitesmoke;
-    font-size: 2rem;
+    display: flex;
     font-weight: bold;
-    margin-bottom: 30px
-}  
-.gameboard {
-    position: relative;
+    font-size: 2rem;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+#score {
+    margin-left: 5px;
+}
+
+.colors-container {
     border-radius: 50%;
-    height: 300px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 315px;
     overflow: hidden;
-    width: 300px;
+    position: relative;
+    width: 315px;
 }
 .color {
-    width: 50%;
-    height: 50%;
-    display: inline-block;
-}
-.left {
-    float: left;
-}
-.right {
-    float: left;
-}
-.celeste {
-    background: #22a6b3;
-}
-.celeste.light {
-    background: #7ed6df;
-}
-.violeta {
-    background: #be2edd;
-}
-.violeta.light {
-    background: #e056fd;
-}
-.naranja {
-    background: #f0932b;
-}
-.naranja.light {
-    background: #ffbe76;
-}
-.verde {
-    background: #6ab04c;
-}
-.verde.light {
-    background: #badc58;
-}
-.btn-start {
-    background: #ecf0f1;
-    border: none;
-    border-radius: 10px;
-    color: #141d26;
-    cursor: pointer;
-    font-size: 2.2rem;
-    font-weight: bold;
-    height: 60px;
-    left: calc(50% - 90px);
-    position: absolute;
-    top: calc(50% - 30px);
-    outline: none;
-    width: 180px;
-}
-.hide {
-    display: none;
+    background-color: #9ACD32;
+    height: auto;
+    width: 100%;
 }
 
-@media (min-width: 420px) {
-    .gameboard {
-        height: 400px;
-        width: 400px;
-    }
+.skyblue {
+    background-color: #22a6b3;
 }
-@media (min-width: 520px) {
-    .gameboard {
-        height: 500px;
-        width: 500px;
-    }
+.skyblue.light {
+    background-color: #7ed6df;
 }
-@media (min-width: 620px) {
-    .gameboard {
-        height: 600px;
-        width: 600px;
-    }
+
+.violet {
+    background-color: #be2edd;
+}
+.violet.light {
+    background-color: #e056fd;
+}
+
+.orange {
+    background-color: #f0932b;
+}
+.orange.light {
+    background-color: #ffbe76;
+}
+
+.green {
+    background-color: #6ab04c;
+}
+.green.light {
+    background-color: #badc58;
+}
+
+.play-button {
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 50px;
+    justify-content: center;
+    left: calc(50% - 50px);
+    position: absolute;
+    top: calc(50% + 10px);
+    width: 100px;
 }

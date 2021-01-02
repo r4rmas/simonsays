@@ -31,7 +31,7 @@ body {
 .colors-container {
     border-radius: 50%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     height: 315px;
     overflow: hidden;
     position: relative;
@@ -110,7 +110,7 @@ body {
         font-size: 3rem;
         height: 80px;
         left: calc(50% - 80px);
-        top: calc(50% + 5px);
+        top: calc(50% - 40px);
         width: 160px;
     }
 }

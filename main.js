@@ -1,73 +1,103 @@
-const color0 = document.getElementById("color0")
-const color1 = document.getElementById("color1")
-const color2 = document.getElementById("color2")
-const color3 = document.getElementById("color3")
-const score = document.getElementById("score")
-const playbutton = document.getElementById("play-button")
-const maxlevel = 100
-const sequence = new Array(maxlevel).fill(0).map(n => Math.floor(Math.random() * 4))
-var level = 1, sublevel = new Array(level)
+const color0 = document.getElementById("color0"),
+      color1 = document.getElementById("color1"),
+      color2 = document.getElementById("color2"),
+      color3 = document.getElementById("color3"),
+      scoreBox = document.getElementById("score"),
+      playButton = document.getElementById("play-button"),
+      maxLevel = 100
+var sequence, level = 1, subLevel = 0, score = 0
 
 function play() {
-    playbutton.style.display = "none"
+    playButton.classList.add("hidden")
+    genSequence()
     sequenceColors()
-    addEvent()
+    addEvents()
 }
 
 const sequenceColors = () => {
-    for (let i = 0; i <= level - 1; i++) {
+    removeEvents()
+    let i
+    for (let i = 0; i < level; i++) {
         switch(sequence[i]) {
             case 0:
-                lightUp(color0)
+                setTimeout(() => longLightUp(color0), 1000 * i)
                 break
             case 1:
-                lightUp(color1)
+                setTimeout(() => longLightUp(color1), 1000 * i)
                 break
             case 2:
-                lightUp(color2)
+                setTimeout(() => longLightUp(color2), 1000 * i)
                 break
             case 3:
-                lightUp(color3)
+                setTimeout(() => longLightUp(color3), 1000 * i)
                 break
         }
     }
+    setTimeout(() => addEvents(), 1000 * i + 1)
 }
 
-const colorToNumber = color => {
-    switch(color) {
-        case "skyblue":
-            return 0
-            break
-        case "violet":
-            return 1
-            break
-        case "orange":
-            return 2
-            break
-        case "green":
-            return 3
-    }
+const pickColor = event => {
+    shortLightUp(event.target);
+    (colorToNumber(event.target.dataset.color) == sequence[subLevel])
+    ? win()
+    : lose()
 }
 
-const addEvent = () => {
+
+const addEvents = () => {
     color0.addEventListener("click", pickColor)
     color1.addEventListener("click", pickColor)
     color2.addEventListener("click", pickColor)
     color3.addEventListener("click", pickColor)
 }
-
-const removeEvent = () => {
+const removeEvents = () => {
     color0.removeEventListener("click", pickColor)
     color1.removeEventListener("click", pickColor)
     color2.removeEventListener("click", pickColor)
     color3.removeEventListener("click", pickColor)
 }
 
-const lightUp = color => {
-    color.classList.add("light")
-    setTimeout(() => color.classList.remove("light"), 1000)
+const win = () => {
+    subLevel++
+    if (subLevel == level) {
+        subLevel = 0; score += 100; level++
+        scoreBox.innerHTML = score
+        setTimeout(() => sequenceColors(), 1000)
+    }
+}
+const lose = () => {
+    score = 0; subLevel = 0; level = 1
+    scoreBox.innerHTML = score
+    alert("You lose")
+    genSequence()
+    playButton.classList.remove("hidden")
 }
 
-const pickColor = event => {
-    lightUp(event.target)
+const genSequence = () => {
+    sequence = new Array(maxLevel).fill(0).map(n => Math.floor(Math.random() * 4))
+}
+
+const longLightUp = color => {
+    color.classList.add("light")
+    setTimeout(() => color.classList.remove("light"), 600)
+}
+const shortLightUp = color => {
+    color.classList.add("light")
+    setTimeout(() => color.classList.remove("light"), 200)
+}
+
+const colorToNumber = color => {
+    switch(color) {
+        case "color0":
+            return 0
+            break
+        case "color1":
+            return 1
+            break
+        case "color2":
+            return 2
+            break
+        case "color3":
+            return 3
+    }
 }

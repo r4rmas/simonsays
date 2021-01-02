@@ -2,4 +2,4 @@
 
 ![alt text](https://i.ibb.co/938CPM3/memorize.png)
 
-Échale un ojo: https://raularmas.github.io/memorize/
+Take a look: https://raularmas.github.io/memorize/

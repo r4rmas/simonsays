@@ -19,7 +19,7 @@ body {
     color: whitesmoke;
     display: flex;
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 2rem;
     justify-content: center;
     margin-bottom: 30px;
     width: 100%;
@@ -32,10 +32,10 @@ body {
     border-radius: 50%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 800px;
+    height: 315px;
     overflow: hidden;
     position: relative;
-    width: 800px;
+    width: 315px;
 }
 .color {
     background-color: #9ACD32;
@@ -77,14 +77,14 @@ body {
     border-radius: 10px;
     cursor: pointer;
     display: flex;
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: bold;
-    height: 100px;
+    height: 40px;
     justify-content: center;
-    left: calc(50% - 100px);
+    left: calc(50% - 50px);
     position: absolute;
-    top: calc(50% + 5px);
-    width: 200px;
+    top: calc(50% + 10px);
+    width: 100px;
 }
 
 .hidden {
@@ -92,9 +92,31 @@ body {
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 420px) {
     .colors-container {
-        height: 600px;
-        width: 600px;
+        height: 415px;
+        width: 415px;
+    } 
+}
+@media (min-width: 520px) {
+    .score-container {
+        font-size: 3rem;
+    }
+    .colors-container {
+        height: 515px;
+        width: 515px;
+    } 
+    .play-button {
+        font-size: 3rem;
+        height: 80px;
+        left: calc(50% - 80px);
+        top: calc(50% + 5px);
+        width: 160px;
+    }
+}
+@media (min-width: 620px) {
+    .colors-container {
+        height: 615px;
+        width: 615px;
     } 
 }

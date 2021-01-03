@@ -68,8 +68,9 @@ const win = () => {
 const lose = () => {
     score = 0; subLevel = 0; level = 1
     scoreBox.innerHTML = score
-    alert("You lose")
+    swal("", "GAME OVER", "error")
     genSequence()
+    removeEvents()
     playButton.classList.remove("hidden")
 }
 

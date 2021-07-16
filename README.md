@@ -1,5 +1,3 @@
-# A game about memorizing colors ~ Un juego sobre memorizar colores
+# The classic Simon Says game
 
 ![alt text](https://i.ibb.co/DMRZfQ5/memorize.png)
-
-Take a look: https://raularmas.github.io/memorize/
